@@ -8,19 +8,39 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.math.BigDecimal;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+
+/**
+ * @author rai.maciel
+ * Item é uma entidade genérica usada para gerênciar pequenas postagems.
+ *
+ * @version 0.0.1
+ */
 
 @Getter
 @Setter
-@Document(collection = "item")
 @AllArgsConstructor
 @NoArgsConstructor
+@Document(collection = "item")
 public class Item {
 
     @Id
     private ObjectId _id;
 
-    private String name;
+    @NotEmpty(message = "Item name may not be empty.")
+    @Size(min = 2, max = 32, message = "Item name must be between 2 and 32 characters long.")
+    private String title;
 
-    private BigDecimal value;
+    @Size(max = 500, message = "Item description size exceeds limit.")
+    private String description;
+
+    @Size(max = 32, message = "Item fileName size exceeds limit.")
+    private String fileName;
+
+    private String base64;
+
+    @Size(max = 6, message = "Item description size exceeds limit.")
+    private String fileType;
 }
