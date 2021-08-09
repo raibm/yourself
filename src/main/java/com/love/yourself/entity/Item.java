@@ -6,15 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-
 /**
  * @author rai.maciel
- * Item é uma entidade genérica usada para gerênciar pequenas postagems.
+ * Item é uma entidade multiuso usada para gerênciar pequenas postagems.
  *
  * @version 0.0.1
  */
@@ -36,11 +36,6 @@ public class Item {
     @Size(max = 500, message = "Item description size exceeds limit.")
     private String description;
 
-    @Size(max = 32, message = "Item fileName size exceeds limit.")
-    private String fileName;
-
-    private String base64;
-
-    @Size(max = 6, message = "Item description size exceeds limit.")
-    private String fileType;
+    @DBRef
+    private File file;
 }

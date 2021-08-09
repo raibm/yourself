@@ -6,10 +6,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 
 @Slf4j
 @RestController
@@ -29,5 +29,18 @@ public class ItemController {
         log.info("Searching a Item by id {}...", _id);
         ItemDTO item = itemService.getById(_id);
         return ResponseEntity.ok().body(item);
+    }
+
+    /**
+     * Save a Item.
+     * @param itemDTO
+     * @return ItemDTO
+     */
+    @PostMapping("")
+    public ResponseEntity<ItemDTO> saveItem(@RequestBody ItemDTO itemDTO) throws URISyntaxException {
+        log.info("Saving item {}...", itemDTO.toString());
+        ItemDTO item = itemService.save(itemDTO);
+        return ResponseEntity.created(new URI("/item"))
+                .body(item);
     }
 }

@@ -5,8 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
-
-import java.math.BigDecimal;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -14,6 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ItemDTO {
     private ObjectId _id;
-    private String name;
-    private BigDecimal value;
+    private String title;
+    private String description;
+    private MultipartFile multipartFile;
 }

@@ -11,4 +11,11 @@ public interface ItemService {
      * @return a ItemDTO
      */
     ItemDTO getById(ObjectId _id);
+
+    /**
+     * @apiNote Used to save a object of type ItemDTO and return it converted at DTO.
+     * @param item
+     * @return a ItemDTO
+     */
+    ItemDTO save(ItemDTO item);
 }
