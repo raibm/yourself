@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -37,7 +38,7 @@ public class ItemController {
      * @return ItemDTO
      */
     @PostMapping("")
-    public ResponseEntity<ItemDTO> saveItem(@RequestBody ItemDTO itemDTO) throws URISyntaxException {
+    public ResponseEntity<ItemDTO> saveItem(@RequestBody @Valid ItemDTO itemDTO) throws URISyntaxException {
         log.info("Saving item {}...", itemDTO.toString());
         ItemDTO item = itemService.save(itemDTO);
         return ResponseEntity.created(new URI("/item"))

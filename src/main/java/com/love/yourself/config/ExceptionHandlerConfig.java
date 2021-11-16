@@ -1,13 +1,13 @@
 package com.love.yourself.config;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.WebRequest;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Configuration
 public class ExceptionHandlerConfig {
@@ -17,12 +17,14 @@ public class ExceptionHandlerConfig {
     private static final String DEFAULT_KEY_MESSAGE = "message";
     private static final String DEFAULT_KEY_EXCEPTION = "exception";
     private static final String DEFAULT_KEY_PATH = "path";
+    private static final String DEFAULT_KEY_ERRORS = "errors";
 
     public static final String KEY_TIMESTAMP = "timestamp";
     public static final String KEY_STATUS = "status";
     public static final String KEY_MESSAGE = "message";
     public static final String KEY_EXCEPTION = "cause";
     public static final String KEY_PATH = "path";
+    public static final String KEY_ERRORS = "errors";
 
 
     @Bean

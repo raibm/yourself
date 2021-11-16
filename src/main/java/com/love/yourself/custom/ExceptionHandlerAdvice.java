@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 @ControllerAdvice
 public class ExceptionHandlerAdvice {
 
-    @ExceptionHandler(NoSuchElementException.class)
+    @ExceptionHandler({NoSuchElementException.class})
     public Object genericException(Object e) {
         return e;
     }
