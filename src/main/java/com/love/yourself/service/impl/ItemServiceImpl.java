@@ -20,7 +20,7 @@ public class ItemServiceImpl implements ItemService {
 
     @Override
     public ItemDTO getById(ObjectId _id) {
-         Item item = itemRepository.findById(_id).orElseThrow();
+        Item item = itemRepository.findById(_id).orElseThrow();
         return itemMapper.toDto(item);
     }
 

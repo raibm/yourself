@@ -22,24 +22,26 @@ public class ItemController {
 
     /**
      * Search a Item by id.
+     *
      * @param _id
      * @return ItemDTO
      */
     @GetMapping("/{id}")
-    public ResponseEntity<ItemDTO> getItem(@PathVariable(value="id") ObjectId _id){
-        log.info("Searching a Item by id {}...", _id);
+    public ResponseEntity<ItemDTO> getItem(@PathVariable(value = "id") ObjectId _id) {
+        log.info("Searching a Item by id {}", _id);
         ItemDTO item = itemService.getById(_id);
         return ResponseEntity.ok().body(item);
     }
 
     /**
      * Save a Item.
+     *
      * @param itemDTO
      * @return ItemDTO
      */
     @PostMapping("")
     public ResponseEntity<ItemDTO> saveItem(@RequestBody @Valid ItemDTO itemDTO) throws URISyntaxException {
-        log.info("Saving item {}...", itemDTO.toString());
+        log.info("Saving item {}", itemDTO.toString());
         ItemDTO item = itemService.save(itemDTO);
         return ResponseEntity.created(new URI("/item"))
                 .body(item);
