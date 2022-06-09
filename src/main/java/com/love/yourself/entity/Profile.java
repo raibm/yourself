@@ -50,6 +50,7 @@ public class Profile {
     @Size(max = 6, message = "Profile avatar type size exceeds limit.")
     private String fileType;
 
-    @DBRef
-    private List<Item> items;
+
+//    @DBRef
+//    private List<Item> items;
 }
