@@ -36,6 +36,6 @@ public class Item {
     @Size(max = 500, message = "Item description size exceeds limit.")
     private String description;
 
-    @DBRef
-    private File file;
+//    @DBRef
+//    private File file;
 }

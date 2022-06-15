@@ -22,7 +22,6 @@ public class ItemController {
 
     /**
      * Search a Item by id.
-     *
      * @param _id
      * @return ItemDTO
      */
@@ -35,7 +34,6 @@ public class ItemController {
 
     /**
      * Save a Item.
-     *
      * @param itemDTO
      * @return ItemDTO
      */
