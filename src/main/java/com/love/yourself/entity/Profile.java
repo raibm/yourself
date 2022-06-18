@@ -8,17 +8,14 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @author rai.maciel
  * Profile é a principal entidade gerenciável do sistema, reponsável por armazenar .
- *
  * @version 0.0.1
  */
 
@@ -33,6 +30,10 @@ public class Profile {
     private ObjectId _id;
 
     private String name;
+
+    private String password;
+
+    private String email;
 
     private String description;
 

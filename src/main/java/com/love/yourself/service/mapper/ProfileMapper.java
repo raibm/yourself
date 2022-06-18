@@ -8,8 +8,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Mapper(componentModel = "spring")
-public interface ProfileMapper extends EntityMapper<ProfileDTO, Profile>{
+public interface ProfileMapper extends EntityMapper<ProfileDTO, Profile> {
 
     @Override
     ProfileDTO toDto(Profile entity);
+
+    @Override
+    Profile toEntity(ProfileDTO dto);
 }

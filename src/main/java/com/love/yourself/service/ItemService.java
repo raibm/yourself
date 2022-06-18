@@ -6,14 +6,14 @@ import org.bson.types.ObjectId;
 public interface ItemService {
 
     /**
-     * @apiNote Used to search a object of type ItemDTO and return it.
+     * @apiNote Use to search a object type ItemDTO and return it.
      * @param _id
      * @return a ItemDTO
      */
     ItemDTO getById(ObjectId _id);
 
     /**
-     * @apiNote Used to save a object of type ItemDTO and return it converted at DTO.
+     * @apiNote Use to save a object type ItemDTO and return it.
      * @param item
      * @return a ItemDTO
      */

@@ -8,8 +8,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Mapper(componentModel = "spring")
-public interface ItemMapper extends EntityMapper<ItemDTO, Item>{
+public interface ItemMapper extends EntityMapper<ItemDTO, Item> {
 
     @Override
     ItemDTO toDto(Item entity);
+
+    @Override
+    Item toEntity(ItemDTO entity);
 }
